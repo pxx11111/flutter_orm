@@ -53,8 +53,8 @@ import 'package:yun_dao/query.dart';
        List<Map> maps = List();
        {{{className}}} entityDao = {{{className}}}();
        for({{{entityName}}} entity in entityList){
-           await dbManager.db.rawInsert("{{{tableName}}}", maps);
-       }
+       await dbManager.db.insert("{{{tableName}}}", entityDao.toMap(entity));      
+   }
        return true;
   }
   
