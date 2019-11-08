@@ -107,7 +107,7 @@ class EntityGenerator extends GeneratorForAnnotation<Entity> {
 
   ///获取要生成的文件的路径
   String _getSource(String fullName) {
-    //String source = fullName.replaceAll("/lib", "");
+    String source = fullName;
     return source;
   }
 }
