@@ -41,7 +41,7 @@ class DBManager {
   String get dbName => _dbName;
 
   ///初始化数据库
-  void initByPath(int version, String dbPath, String dbName) async {
+  Future initByPath(int version, String dbPath, String dbName) async {
     this._version = version;
     this._dbPath = dbPath;
     this._dbName = dbName;
@@ -49,9 +49,9 @@ class DBManager {
     _db = await openDatabase(databasesPath, version: version);
   }
 
-  void init(int version, String dbName) async {
+  Future init(int version, String dbName) async {
     var dbPath = await getDatabasesPath();
-    initByPath(version, dbPath, dbName);
+    await initByPath(version, dbPath, dbName);
   }
 
   Future<String> _createNewDb(String dbName, String dbPath) async {

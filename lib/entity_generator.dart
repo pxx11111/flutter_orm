@@ -92,7 +92,7 @@ class EntityGenerator extends GeneratorForAnnotation<Entity> {
       'entityName': entityName,
       'tableName': annotation.peek("nameInDb")?.stringValue,
       "propertyList": "$jsonStr",
-      "source": _getSource(element.source.fullName.substring(1)),
+      "source": _getSource(element.source.fullName.substring(1),element),
       "toMap": toMap,
       "formMap": formMap,
       "createSql": createSql,
@@ -106,7 +106,8 @@ class EntityGenerator extends GeneratorForAnnotation<Entity> {
   }
 
   ///获取要生成的文件的路径
-  String _getSource(String fullName) {
+  String _getSource(String fullName,Element element) {
+    print("==== "+fullName+" "+element.source.fullName);
     String source = fullName.replaceAll("/lib", "");
     return source;
   }
