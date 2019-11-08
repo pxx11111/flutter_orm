@@ -43,24 +43,15 @@ class StudentEntity{
  >  process_run: '>=0.10.0'
 
  写工具shell.dart文件：
-> 
-> import 'package:process_run/shell.dart';
-> 
-> Future<void> main() async {
-  
-
-> final Shell shell = Shell();
->   await shell.run('''
-
-
-> flutter packages pub run build_runner build
-
-
-> ''');
-
-
-> }
-
+```Dart
+ import 'package:process_run/shell.dart';
+  Future<void> main() async {
+   final Shell shell = Shell();
+   await shell.run('''
+   flutter packages pub run build_runner build
+ ''');
+}
+```
          
 直接运行工具类shell.dart即可自动生成dao文件
 
@@ -92,7 +83,7 @@ StudentEntityTable.insert(StudentEntity());
 8、你也可以通过构造查询器来查询数据
 ```Dart
 List list = await StudentEntityDao.queryBuild()
-        .where(StudentEntityDao.NAME.equal("李四"))
+        .where(StudentEntityDao.NAME.equal("小明"))
         .where(StudentEntityDao.AGE.equal(2))
         .list();
 ```
@@ -100,14 +91,11 @@ List list = await StudentEntityDao.queryBuild()
 
 
 安装
-
-
-> dependencies:
-> 
-> flutter_orm:
->  
->  git: https://github.com/pxx11111/flutter_orm.git
-          
+```Dart
+ dependencies:
+ flutter_orm:
+ git: https://github.com/pxx11111/flutter_orm.git
+ ```
 
 
 
