@@ -67,7 +67,7 @@ class StudentEntity{
 5、编译后生成的数据库操作文件中包含当前表的创建、增删改查等方法,在项目中使用需要先进行数据库的初始化
 ```Dart
 ///导入数据库管理类
-import 'package:yun_dao/db_manager.dart';
+import 'package:flutter_orm/db_manager.dart';
 
 ///传入数据库版本、数据库路径以及数据库名称来初始化数据库,DBManager为单例,每次创建拿到的都是同一个
 DBManager dBManager = DBManager();
