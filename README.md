@@ -71,9 +71,9 @@ import 'package:yun_dao/db_manager.dart';
 
 ///传入数据库版本、数据库路径以及数据库名称来初始化数据库,DBManager为单例,每次创建拿到的都是同一个
 DBManager dBManager = DBManager();
-dBManager.initByPath(1,“dbPath”,"dbName");
+await dBManager.initByPath(1,“dbPath”,"dbName");
 ///你也可以使用默认路径来初始化数据库 默认的路径为 getDatabasesPath()
-dBManager.init(1,"dbName");
+await dBManager.init(1,"dbName");
 ```
 
 
