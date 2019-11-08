@@ -38,9 +38,31 @@ class StudentEntity{
 }
 ```
 
-4、新建工具dart，代码如下：
-         flutter packages pub run build_runner build
+4、pubspec.yaml里dev_dependencies:增加如下代码：
+    
+ >  process_run: '>=0.10.0'
 
+ 写工具shell.dart文件：
+> 
+> import 'package:process_run/shell.dart';
+> 
+> Future<void> main() async {
+  
+
+> final Shell shell = Shell();
+>   await shell.run('''
+
+
+> flutter packages pub run build_runner build
+
+
+> ''');
+
+
+> }
+
+         
+直接运行工具类shell.dart即可自动生成dao文件
 
 5、编译后生成的数据库操作文件中包含当前表的创建、增删改查等方法,在项目中使用需要先进行数据库的初始化
 ```Dart
@@ -78,12 +100,14 @@ List list = await StudentEntityDao.queryBuild()
 
 
 安装
-===
 
-      dev_dependencies:
-          yun_dao: 0.0.4
+
+> dependencies:
+> 
+> flutter_orm:
+>  
+>  git: https://github.com/pxx11111/flutter_orm.git
           
 
-[示例代码](https://github.com/yeyunHZ/yun_dao_test)
-===
+
 
