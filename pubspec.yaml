@@ -1,8 +1,8 @@
-name: yun_dao
+name: flutter_orm
 description: flutter ORM Lib.
 version: 0.0.4
-author: 'yunye<550752356@qq.com>'
-homepage: "https://github.com/yeyunHZ/yun_dao.git"
+author: 'pengxiaoxuan@100tal.com'
+homepage: "https://github.com/pxx11111/flutter_orm.git"
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

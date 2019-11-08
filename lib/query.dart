@@ -1,5 +1,5 @@
-import 'package:yun_dao/dao.dart';
-import 'package:yun_dao/db_manager.dart';
+import 'package:flutter_orm/dao.dart';
+import 'package:flutter_orm/db_manager.dart';
 
 ///sqllite查询器
 class Query {
