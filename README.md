@@ -2,13 +2,13 @@
 简介
 ===
 
-一个以注解方式实现的ORM数据库解决方案，主要基于sqflite、source_gen和build_runner。
+一个以注解方式实现的ORM数据库解决方案，主要基于sqflite、source_gen、mustache4dart和build_runner。
 # 涉及思路
 由于source_gen 提供用于Dart自动生成源代码的实用程序，用于编写使用和生成Dart代码的Builder 框架。通过继承Generator或者GeneratorForAnnotation来实现一个基于注解的生成器。然后通过注解把entity里需要生成数据库属性的字段名称和类型标识。
 
 build_runner包提供了一种编译、启动服务、和测试 web 应用的方式。使用build_runner代替弃用的pub build和pub serve命令。我们使用build_runner去使用flutter sdk进行构建。flutter pub run build_runner build 。然后就会生成dao文件，这样就完成了基本的dao文件生成过程。
 
-原理就是source_gen通过拦截Annotation，解析其上下文element然后通过builder即可动态生成代码。
+原理就是source_gen通过拦截Annotation，解析其上下文element然后通过builder即可动态生成代码。mustache4dart根据注解拿到的参数进行模板填充。
 
 # 安装
 pubspec.yaml 添加
