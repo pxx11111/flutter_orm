@@ -7,7 +7,7 @@ targets:
 builders:
   entity_generator:
     import: "package:flutter_orm/builder.dart" #build文件
-    builder_factories: ["yunEntityGenerator"]
+    builder_factories: ["ormEntityGenerator"]
     build_extensions: {".dart": [".entity_generator.g.part"]}
     auto_apply: root_package
     build_to: source

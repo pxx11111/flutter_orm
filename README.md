@@ -93,8 +93,8 @@ List list = await StudentEntityDao.queryBuild()
 安装
 ```Dart
  dependencies:
- flutter_orm:
- git: https://github.com/pxx11111/flutter_orm.git
+   flutter_orm:
+   git: https://github.com/pxx11111/flutter_orm.git
  ```
 
 
