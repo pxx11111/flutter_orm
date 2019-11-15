@@ -53,6 +53,7 @@ class PropertyType {
   Map<String, dynamic> toJson() => {'value': value};
 
   static const PropertyType INT = PropertyType(value: "INT"),
-      STRING = PropertyType(value: "TEXT"),
-      DOUBLE = PropertyType(value: "REAL");
+      TEXT = PropertyType(value: "TEXT"),
+      REAL = PropertyType(value: "REAL"),
+      BLOB = PropertyType(value: "BLOB");
 }

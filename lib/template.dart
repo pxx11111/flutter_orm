@@ -72,7 +72,11 @@ import 'package:flutter_orm/query.dart';
         DBManager dbManager = DBManager();
         return await dbManager.db.delete("{{{tableName}}}", where: '{{{primary}}} = ?', whereArgs: [entity.{{{primary}}}]);
   }
-  
+  ///删除表格所有数据
+  static Future<int> deleteTable({{{entityName}}} entity) async {
+        DBManager dbManager = DBManager();
+        return await dbManager.db.delete("{{{tableName}}}");
+  }
   
   ///map转为entity
   @override
