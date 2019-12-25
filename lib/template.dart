@@ -46,7 +46,13 @@ import 'package:flutter_orm/query.dart';
        await dbManager.db.insert("{{{tableName}}}", entityDao.toMap(entity));
        return true;
   }
-  
+   ///保存并更新一条数据
+  static Future<bool> saveOrUpdate({{{entityName}}} entity) async{
+       DBManager dbManager = DBManager();
+        {{{className}}} entityDao = {{{className}}}();
+       await dbManager.db.insert("{{{tableName}}}", entityDao.toMap(entity),conflictAlgorithm: ConflictAlgorithm.replace);
+       return true;
+  }
    ///增加多条条数据
   static Future<bool> insertList(List<{{{entityName}}}> entityList) async{
        DBManager dbManager = DBManager();
